@@ -1,0 +1,20 @@
+.panel-edition .text-container {
+	display: flex;
+}
+.panel-edition .panel-edition-fragment.variable-fragment {
+	display: flex;
+}
+.panel-edition .panel-edition-fragment.variable-fragment select {
+    height: calc(1.5rem + 2px);
+    padding: .0rem .1rem .1rem .1rem;
+    font-size: 1rem;
+}
+.panel-edition .panel-edition-fragment.variable-fragment .symbol {
+	padding: 0px 4px;
+}
+.panel-edition .panel-edition-fragment.text-fragment {
+	display: inline-block;
+	/*border: solid 1px black;*/
+	/*min-width: 50px;*/
+	outline: none;
+}

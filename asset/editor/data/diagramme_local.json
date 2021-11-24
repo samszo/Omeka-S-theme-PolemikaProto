@@ -1,0 +1,34 @@
+[
+   {
+      "name":"diagram1",
+      "id":6402,
+      "title":"Transformer",
+      "urlData":"\/media\/editor\/data\/carteArgumentaireSamuel-modified.json",
+      "urlArchetypes":"\/media\/editor\/data\/archetypes.json",
+      "type":"Diagram_argument"
+   },
+   {
+      "name":"diagram2",
+      "id":6403,
+      "title":"Transformer",
+      "urlData":"\/media\/editor\/data\/newCarteSamuel.json",
+      "urlArchetypes":"\/media\/editor\/data\/newCarteSamuel_archetypes.json",
+      "type":"Diagram_argument"
+   },
+   {
+      "name":"diagram3",
+      "id":6403,
+      "title":"Test force",
+      "urlData":"\/media\/editor\/data\/newCarteSamuel.json",
+      "urlArchetypes":"\/media\/editor\/data\/newCarteSamuel_archetypes.json",
+      "type":"Diagram_force"
+   },
+   {
+      "name":"diagram4",
+      "id":6403,
+      "title":"Test force",
+      "urlData":"\/media\/editor\/data\/newCarteSamuel.json",
+      "urlArchetypes":"\/media\/editor\/data\/newCarteSamuel_archetypes.json",
+      "type":"Diagram_argument_force"
+   }
+]

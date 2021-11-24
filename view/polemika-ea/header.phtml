@@ -1,0 +1,36 @@
+<?php
+$userBar = $this->userBar();
+
+?>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand mx-0" href="../" style="line-height: initial;">
+        <div style="border-top: 1px solid #1894d9; border-bottom: 1px solid #1894d9;">
+            POLEMIKA
+        </div>						
+    </a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mp-auto">
+            <li class="nav-item px-2"><a target="_blank" href="https://www.univ-paris8.fr/EA-349-Laboratoire-Paragraphe">
+            <img style="height: 40px;" src="<?php echo $this->assetUrl('logos/logo_paragraphe.gif'); ?>" alt="Laboratoire Paragraphe" />
+            </a></li>
+            <li class="nav-item px-2">
+                <a target="_blank" href="https://www.univ-paris8.fr/">
+                <img style="height: 40px;" src="<?php echo $this->assetUrl('logos/logo-p8.svg'); ?>" alt="Université Paris 8" />	                            		
+                </a>
+            </li>
+            <li class="nav-item px-2"><a target="_blank" href="http://eur-artec.fr/"><img style="height: 40px;"
+                            src="<?php echo $this->assetUrl('logos/ArTeC.png'); ?>"
+                            alt="Artec" /></a></li>
+            <li class="nav-item px-2"><a target="_blank" href="https://www.iledefrance.fr/"><img style="height: 40px;"
+                        src="<?php echo $this->assetUrl('logos/region_ile-de-france.svg'); ?>"
+                        alt="Région Ile de France" /></a></li>
+    </ul>
+    <div class="d-flex w-100 justify-content-end">
+            <?php echo $userBar;?>
+    </div>
+</nav>

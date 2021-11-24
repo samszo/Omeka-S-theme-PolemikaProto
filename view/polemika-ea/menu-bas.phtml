@@ -1,0 +1,14 @@
+<?php
+$nav = $site->publicNav();
+$container = $nav->getContainer();
+$activePage = $nav->findActive($container);
+?>
+<span class="navbar-text text-center color-darkgrey size-regular font-regular">
+<?php foreach($container as $page): ?>
+    <?php
+        $color = $activePage && $page->label == $activePage['page']->label ? 'color-darkblue' :'color-darkgrey';
+        $page->setClass("navbar-text text-center ".$color." size-regular font-regular"); 
+        echo $this->navigation()->menu()->htmlify($page) ." | ".PHP_EOL; 
+    ?>
+<?php endforeach; ?>
+</span>

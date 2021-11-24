@@ -1,0 +1,22 @@
+<?php
+
+$type = $this->params()->fromQuery('type','');
+$log = $this->logger();
+$props = $this->pageProps();
+
+switch ($type) {
+        case 'diagramme':
+                $user = $this->identity();
+                echo $this->json($this->DiagrammeFactory(['user'=>$user, 'props'=>$props,'query'=>$this->params()->fromQuery(),'post'=>$this->params()->fromPost()]));
+                break;
+        case 'querySql':
+                $rs = $this->QuerySqlFactory($this->params()->fromQuery());    
+                echo $this->json($rs);                
+                break;                               
+}
+
+
+?>
+
+
+

@@ -1,0 +1,74 @@
+                            [
+   {
+      "id":8385,
+      "type":"node",
+      "name":"Envelope 616541d310865",
+      "cssStyle":"background-color: #EDF4F6; color: #000000; border-width: 1px; border-color: rgba(255,150,0,255);"
+   },
+   {
+      "id":8386,
+      "type":"node",
+      "name":"Envelope 616541d3d95c0",
+      "cssStyle":"background-color: #EDF4F6; color: #000000; border-width: 1px; border-color: rgba(0,0,0,255);"
+   },
+   {
+      "id":8387,
+      "type":"node",
+      "name":"Envelope 616541d4ac37c",
+      "cssStyle":"background-color: #EDF4F6; color: #000000; border-width: 1px; border-color: rgba(255,0,255,255);"
+   },
+   {
+      "id":8388,
+      "type":"node",
+      "name":"Envelope 616541d56bbe1",
+      "cssStyle":"border-color:#073763;background-color:#cfe2f3;color:#000000;border-width:3px;font-weight:none;font-style:none"
+   },
+   {
+      "id":8389,
+      "type":"node",
+      "name":"Envelope 616541d6d34dc",
+      "cssStyle":"background-color: white; color: #000000; border-width: 1px; border-color: transparent;"
+   },
+   {
+      "id":8390,
+      "type":"link",
+      "name":"Ligne 616541d771db2",
+      "cssStyle":"border-color:#073763;background-color:#cfe2f3;color:#000000;border-width:3px;font-weight:none;font-style:none"
+   },
+   {
+      "id":8391,
+      "type":"link",
+      "name":"Ligne 616541d86eb56",
+      "cssStyle":"border-color:#073763;background-color:#cfe2f3;color:#000000;border-width:3px;font-weight:none;font-style:none"
+   },
+   {
+      "id":8393,
+      "type":"link",
+      "name":"Ligne 616541d9d925c",
+      "cssStyle":"border-color:#073763;background-color:#cfe2f3;color:#000000;border-width:3px;font-weight:none;font-style:none"
+   },
+   {
+      "id":8394,
+      "type":"link",
+      "name":"Ligne 616541db526dc",
+      "cssStyle":"border-color:#073763;background-color:#cfe2f3;color:#000000;border-width:3px;font-weight:none;font-style:none"
+   },
+   {
+      "id":8395,
+      "type":"link",
+      "name":"Ligne 616541dd4d96a",
+      "cssStyle":"border-color:#073763;background-color:#cfe2f3;color:#000000;border-width:3px;font-weight:none;font-style:none"
+   },
+   {
+      "id":8397,
+      "type":"link",
+      "name":"Ligne 616541de6a500",
+      "cssStyle":"border-color:#073763;background-color:#cfe2f3;color:#000000;border-width:3px;font-weight:none;font-style:none"
+   },
+   {
+      "id":8398,
+      "type":"link",
+      "name":"Ligne 616541deaef39",
+      "cssStyle":"border-color:#073763;background-color:#cfe2f3;color:#000000;border-width:3px;font-weight:none;font-style:none"
+   }
+]
