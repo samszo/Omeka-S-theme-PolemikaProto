@@ -175,4 +175,40 @@ class Diagram_argument_force extends Diagram {
         this.simulation.stop();
         this.layoutElements = [];
     }
+	computeNodeStyle(d3Node) {
+		var self = this;
+		d3Node
+		.attr('stroke', function(d) {
+			var instance = self.builder.gotInstance($(this).parent(), d, self);
+			var styleTable = instance.getStyleTable();
+			var s = styleTable["border-color"];
+			if (s == null)
+				s = "rgba("+self.styles[0]["concept-style"]["border-color"]+")";
+			//let s = "rgba("+self.styles[0]["concept-style"]["border-color"]+")";
+			//if(d.style) s = d.style['border-color'] ? "rgba("+d.style['border-color']+")" : s;
+			//if(d.type=="linking-phrase")s = "none";
+			return s;
+		})
+		//.attr('stroke-width',self.styles[0]["concept-style"]["border-thickness"])
+		.attr('stroke-width', function(d) {
+			var instance = self.builder.gotInstance($(this).parent(), d, self);
+			var styleTable = instance.getStyleTable();
+			var s = styleTable["border-width"];
+			if (s == null)
+				s = self.styles[0]["concept-style"]["border-thickness"];
+			return s;
+		})
+		.attr('fill', function(d) {
+			var instance = self.builder.gotInstance($(this).parent(), d, self);
+			var styleTable = instance.getStyleTable();
+			var s = styleTable["background-color"];
+			if (s == null)
+				s = "rgba("+self.styles[0]["concept-style"]["background-color"]+")";
+			//let s = "rgba("+self.styles[0]["concept-style"]["background-color"]+")";
+			//if(d.style) s = d.style['color'] ? d.style['color'] : s;
+			//if(d.type=="linking-phrase")s = "white";
+			return s
+		});
+	}
+
 }
