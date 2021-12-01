@@ -339,6 +339,10 @@ class NodeInstance_argument_force extends NodeInstance {
 		console.log("event", event.x, event.y);
 		this.diagram.stopAutoLayout();
 		this.draggedNodeElts = this.diagram.selection.slice();
+		if (!_.contains(this.draggedNodeElts, domElt)) {
+		    this.diagram.setSelection([domElt]);
+		    this.draggedNodeElts = this.diagram.selection.slice();
+		}
 		this.draggedNodeElts = _.filter(this.draggedNodeElts, function(elt) {return $(elt).hasClass("node")});
 		if (this.draggedNodeElts.indexOf(domElt) < 0)
 		    this.draggedNodeElts.push(domElt);
