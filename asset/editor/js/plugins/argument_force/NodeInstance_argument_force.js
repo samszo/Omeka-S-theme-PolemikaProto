@@ -47,7 +47,7 @@ class NodeInstance_argument_force extends NodeInstance {
 	/* overridden */
 	renderNodeStyle() {
 		var rect = d3.select(this.domElt.find(".rectNode")[0]);
-		this.diagram.computeNodeStyle(rect);
+		this.computeNodeStyle(rect);
 	}
 	graphEnter(d3Node, data) {
         //console.log("NodeInstance_argument_force> graphEnter");
@@ -192,31 +192,31 @@ class NodeInstance_argument_force extends NodeInstance {
 	}
 	computeNodeStyle(d3Node) {
 		var self = this;
+		var $node = $(d3Node.node()).parent();
+		var instance = self.diagram.builder.gotInstance($node);
+		var styleTable = instance.getStyleTable();
 		d3Node
             .attr('stroke', function(d) {
-                var instance = self.diagram.builder.gotInstance($(this).parent(), d, self);
-                var styleTable = instance.getStyleTable();
                 var s = styleTable["border-color"];
                 if (s == null)
                     s = "rgba(0,0,0,255)";
                 return s;
             })
             .attr('stroke-width', function(d) {
-                var instance = self.diagram.builder.gotInstance($(this).parent(), d, self);
-                var styleTable = instance.getStyleTable();
                 var s = styleTable["border-width"];
                 if (s == null)
                     s = 1;
                 return s;
             })
             .attr('fill', function(d) {
-                var instance = self.diagram.builder.gotInstance($(this).parent(), d, self);
-                var styleTable = instance.getStyleTable();
                 var s = styleTable["background-color"];
                 if (s == null)
                     s = "rgba(237,244,246,255)";
                 return s
             });
+        var color = styleTable["color"];
+        if (color != null)
+            $node.find("text").css("fill", color);
 	}
 	computeNodeSize(d3Node, data) {
 		//récupère la taille du texte
