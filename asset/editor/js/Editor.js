@@ -26,7 +26,7 @@ class Editor {
 		this.nodeStyleModal = new NodeStyleModal("nodeStyleModal");
 		this.reificationModal = new ReificationModal("reificationModal");
 		//this.nodeStyleModal.open();
-		
+		/*bouton pour appliquer le layout force
 		var $button = $("button[action=test]");
 		$button.bind("click", function() {
 			console.log("TEST");
@@ -37,10 +37,17 @@ class Editor {
             });
 			self.getCurrentDiagram().startAutoLayout(nodes);
 		});
+		*/
+
 		var $button = $("button[action=save]");
 		$button.bind("click", function() {
 			var changes = self.getCurrentDiagram().model.getChanges();
-			console.log(JSON.stringify(changes, null, 2));
+			self.api.setChanges(changes);
+		});
+		var $button = $("button[action=new]");
+		$button.bind("click", function() {
+			let diagramName = window.prompt('Quelle est le nom du diagramme ?', 'Nouveau diagramme');
+			if(diagramName)self.api.setNewDiagram(diagramName, self.loadDiagram);
 		});
     }
 	bindSelectionMode() {
@@ -188,24 +195,6 @@ class Editor {
 			self.currentDiagram.load(lock1.result);
         });		
 		
-		/*$.ajax({
-			url: url,
-			dataType: "json",
-			success: function (data) {
-				//calcul la taille du conteneur				
-				var params = {
-					editor : self,
-					data: data,
-					container: $carteContainer
-				};
-				var diagramClass = eval(diagramClassName);
-				self.currentDiagram = new diagramClass(params);
-				//self.currentDiagram = new DiagramArgument(params);
-				self.currentDiagram.addObserver(function(event, subject) {
-					self.manageEvent(event, subject);
-				});				
-			}
-		});*/
 	}
 	resolveJsonData(data) {
 		var lock = $.Deferred();

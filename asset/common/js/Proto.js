@@ -4,8 +4,10 @@ class Proto {
 		this.useLocalData = false;
 		this.useLocal = false;
 		this.useProxy = this.useLocal;
-		this.APIBaseUrl = urlApi; //définie dans helper/JsUris.php
 		this.useCorsProxy = this.useLocal;
+		//définie dans helper/JsUris.php
+		this.urlApi = urlApi; 
+		this.urlAjax = urlAjax
     }
     getRootUrl() {
         return urlRoot;//définie dans helper/JsUris.php
@@ -80,7 +82,7 @@ class Proto {
 	}
 	resolveAPIUrl(relativeUrl) {
 		if (this.useLocal && relativeUrl.indexOf("../") == 0) {
-			var apiUrl = this.APIBaseUrl;
+			var apiUrl = this.urlApi;
 			var shifts = 0
 			while (relativeUrl.indexOf("../") == 0) {
 				relativeUrl = relativeUrl.substring(3);

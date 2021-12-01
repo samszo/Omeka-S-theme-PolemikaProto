@@ -17,13 +17,36 @@ class ProtoAPI {
 				}
 			)
 	    } else {
+			mdPatienter.show();
 			$.ajax({
 				url: url,
-				dataType: "json",
-				success: function (data) {
-					callback(data);
-				}
+				dataType: "json"				
+			}).done(function(data) {
+				callback(data);
+			})
+			.fail(function(e) {
+				console.log(e)
+				})
+			.always(function() {
+				mdPatienter.close();
 			});
 	    }
 	}
+    postJson(url, d, callback) {
+		mdPatienter.show();
+		return $.ajax({
+			type: 'POST',
+			url: url,
+			data: d
+			}).done(function(data) {
+		    	callback(data);
+			})
+			.fail(function(e) {
+			  console.log(e)
+		  	})
+			.always(function() {
+				mdPatienter.close();
+			});
+    }
+
 }

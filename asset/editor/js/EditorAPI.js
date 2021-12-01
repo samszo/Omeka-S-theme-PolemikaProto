@@ -5,8 +5,7 @@ class EditorAPI extends ProtoAPI {
         this.useLocalData = false;
 	}
 	getDiagrams(callback) {
-        //urlAjax définie dans helper/JsUris.php
-        var url = urlAjax+'&type=diagramme&action=getDiagrammes';
+        var url = this.proto.urlAjax+'&type=diagramme&action=getDiagrammes';
         if (this.useLocalData)
             url = '/media/editor/data/diagramme_local.json';
         this.getJSON(
@@ -21,8 +20,7 @@ class EditorAPI extends ProtoAPI {
         if (this.conceptsDansCrible != null)
             callback(this.conceptsDansCrible);
         else {
-            //var url = 'https://polemika.univ-paris8.fr/omk/api/items?resource_template_id=41&sort_by=created&sort_order=desc';
-            var url = 'http://localhost/omk_polemika/api/items?resource_template_id=41&sort_by=created&sort_order=desc';
+            var url = this.proto.urlApi+'/items?resource_template_id=41&sort_by=created&sort_order=desc';
             
             if (this.useLocalData)
                 url = '/media/editor/data/conceptDansCrible.json';
@@ -45,4 +43,21 @@ class EditorAPI extends ProtoAPI {
             }
         );
 	}
+	setChanges(changes, callback) {
+        let url = this.proto.urlAjax+'&type=diagramme&action=changeDiagramme'
+        this.postJson(url,changes,function(data) {
+            console.log(data);
+        });			
+	}
+    setNewDiagram(diagramName, callback){
+        let url = this.proto.urlAjax+'&type=diagramme&action=newDiagramme&kind=diagramme&label='+diagramName
+        this.getJSON(
+            url,
+            function(data) {
+                if(data.error)window.alert(data.message);
+                else callback(data);
+            }
+        );
+	}
+
 }

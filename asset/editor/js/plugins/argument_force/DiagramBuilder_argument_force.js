@@ -16,6 +16,7 @@ class DiagramBuilder_argument_force extends DiagramBuilder {
 	createNode(archetype) {
 		var newNode = {
 			id:this.newId(),
+			idDiagram:this.diagram.data.id,
 			kind: "node",
 			idArchetype:archetype.id,
 			label:"New node"
@@ -28,6 +29,7 @@ class DiagramBuilder_argument_force extends DiagramBuilder {
 		var newLink = {
 			id:this.newId(),
 			kind: "link",
+			idDiagram:this.diagram.data.id,
 			idArchetype: this.linkArchetype.data.id,
 			label:"",
 			src:sourceNode.data()[0].id,

@@ -3,6 +3,7 @@ class Archetype extends StyledObject {
     constructor(data, diagram) {
 		super(data, diagram);
 		var self = this;
+		self.data.kind='archetype';
 		self.node = $('<div class="nodeArchetype" data-id='+data.id+'>'+data.name+'</div>');
 		self.updateRenderStyle();		
 		self.computeStyleTable(data.cssStyle);
