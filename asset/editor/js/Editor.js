@@ -39,13 +39,11 @@ class Editor {
 		});
 		*/
 
-		var $button = $("button[action=save]");
-		$button.bind("click", function() {
+		this.node.find("button[action=save]").bind("click", function() {
 			var changes = self.getCurrentDiagram().model.getChanges();
 			self.api.setChanges(changes);
 		});
-		var $button = $("button[action=new]");
-		$button.bind("click", function() {
+		this.node.find("button[action=new]").bind("click", function() {
 			let diagramName = window.prompt('Quelle est le nom du diagramme ?', 'Nouveau diagramme');
 			if(diagramName)self.api.setNewDiagram(diagramName, self.loadDiagram);
 		});
